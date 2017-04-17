@@ -74,17 +74,13 @@ rm src/app/*.spec*.ts
 rm non-essential-files.osx.txt
 ```
 
-## Features
-
-- Touch ready, simply use it with your tablet!
-- Error-tolerant
-
 ## TODO
 
 - Display message in dropdown while retrieving results asyncronously
 - Display message in dropdown when there is no result
 
 - Remove in-memory web api including obsolete dependencies
+- Remove git commit history
 
 ### Unit Tests
 TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec.ts`.
