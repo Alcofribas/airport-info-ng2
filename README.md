@@ -79,6 +79,8 @@ rm non-essential-files.osx.txt
 - Display message in dropdown while retrieving results asyncronously
 - Display message in dropdown when there is no result
 
+- Remove unneeded service "airport.service.ts"
+
 - Remove in-memory web api including obsolete dependencies
 - Remove git commit history
 

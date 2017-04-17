@@ -12,6 +12,7 @@ import { AirportDetailComponent } from './airport-detail/airport-detail.componen
 import { AirportSearchComponent } from './airport-search/airport-search.component';
 import { AirportService } from './airport.service';
 import { AirportDetailMapComponent } from './airport-detail-map/airport-detail-map.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AirportDetailMapComponent } from './airport-detail-map/airport-detail-m
     AirportDetailComponent,
     AirportSearchComponent,
     AirportDetailMapComponent,
+    AutocompleteComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
 
 @Component({
-  selector: 'app-airport-search',
+  selector: 'airport-search',
   templateUrl: './airport-search.component.html',
   styleUrls: ['./airport-search.component.scss']
 })

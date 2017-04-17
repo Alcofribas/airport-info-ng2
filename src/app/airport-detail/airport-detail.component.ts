@@ -11,7 +11,7 @@ import 'rxjs/add/operator/switchMap';
 @Component({
 	selector: 'airport-detail',
 	templateUrl: './airport-detail.component.html',
-	styleUrls: ['./airport-detail.component.css']
+	styleUrls: ['./airport-detail.component.scss']
 })
 export class AirportDetailComponent implements OnInit {
 
