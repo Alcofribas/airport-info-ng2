@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Jsonp } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -9,7 +9,10 @@ import { Airport } from '../airport';
 @Injectable()
 export class AirportSearchService {
 
-	constructor(private http: Http) {}
+	constructor(
+		private http: Http,
+		private jsonp: Jsonp
+	) {}
 
 	search(term: string): Observable<Airport[]> {
 		// TODO: adapt for use with real API

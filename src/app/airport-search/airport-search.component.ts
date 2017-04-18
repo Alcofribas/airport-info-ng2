@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Http, RequestOptions } from '@angular/http';
-import { MIN_SEARCH_LENGTH, PAUSE, TEXT_SEARCHING, TEXT_NORESULTS } from "../../globals";
+import { Component, Input, OnInit } from '@angular/core';
+import { Http, RequestOptions } 		from '@angular/http';
+import { MAX_CHARS, MIN_SEARCH_LENGTH, PAUSE, TEXT_SEARCHING, TEXT_NORESULTS } from "../../globals";
 
 import { Observable } 			 from 'rxjs/Observable';
 import { Subject }    			 from 'rxjs/Subject';
@@ -15,6 +15,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 import { AirportSearchService } from './airport-search.service';
+// import { AirportDetailMapComponent } from '../airport-detail-map/airport-detail-map.component';
 import { Airport } from '../airport';
 
 const noop = () => { };
@@ -27,6 +28,9 @@ const noop = () => { };
 })
 export class AirportSearchComponent implements OnInit {
 
+	@Input() public textSearching = TEXT_SEARCHING;
+	@Input() public textNoResults = TEXT_NORESULTS;
+
 	public searchStr = '';
 	private displaySearching = true;
   private _onTouchedCallback: () => void = noop;
@@ -38,10 +42,8 @@ export class AirportSearchComponent implements OnInit {
 	private searchTerms = new Subject<string>();
 
 	constructor(
-		private airportSearchService: AirportSearchService
+		private airportSearchService: AirportSearchService,
 	) {}
-
-
 
 	// Push a search term into the observable stream
 	search(term: string): void {
@@ -67,6 +69,7 @@ export class AirportSearchComponent implements OnInit {
 		this.selectedAirport = airport;
 		// TODO: update value of searchbox with name of selected airport
 		// TODO: close suggestion box
+		// this.initializeMap(airport);
 
 	// TODO: add logic for key events (esc, up, down, enter) to choose from suggestions
 	}

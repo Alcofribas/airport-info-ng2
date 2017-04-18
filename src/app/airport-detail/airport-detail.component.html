@@ -4,8 +4,9 @@
   	<div>
   		<label>ID:</label> <span class="airport-detail-value">{{airport.id}}</span><br />
   		<label>ICAO:</label> <span class="airport-detail-value">{{airport.icao}}</span><br />
-  		<label>Location:</label> <span class="airport-detail-value">{{airport.city}}, {{airport.country}}</span>
-  		<!-- TODO add other properties-->
+      <label>IATA:</label> <span class="airport-detail-value">{{airport.iata}}</span><br />
+  		<label>Location:</label> <span class="airport-detail-value">{{airport.city}}, {{airport.country}}</span><br />
+      <label>Coordinates:</label> <span class="airport-detail-value">{{airport.latitude | number:'.3-3'}}, {{airport.longitude | number:'.3-3'}}</span>
   	</div>
   </div>
 </div>

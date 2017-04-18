@@ -8,4 +8,8 @@ import { Airport } from '../airport'
 })
 export class AirportDetailComponent {
 	@Input() airport: Airport;
+
+	registerAirport(airport: Airport){
+		this.airport = airport;
+	}
 }
