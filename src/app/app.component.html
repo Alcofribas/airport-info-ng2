@@ -3,18 +3,25 @@
 </nav>
 <div class="container">
   <div class="jumbotron">
-    <h1 class="display-3">Airport Information</h1>
+    <h1 class="heading">Airport Information</h1>
     <p class="lead">The essential facts about your favourite airports worldwide. <br />Here, at your fingertips.</p>
-    <div>
-      <airport-search></airport-search>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <airport-search #Search></airport-search>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <airport-detail [airport]="Search.selectedAirport"></airport-detail>
+    </div>
+    <div class="col-lg-6">
+      <airport-detail-map [airport]="Search.selectedAirport"></airport-detail-map>
     </div>
   </div>
+  <footer class="footer">
+    <p>&copy; Oliver Gondring 2017</p>
+  </footer>
 </div>
-<!-- search-box -->
-<!-- result details -->
-<div class="container">
-  <airport-detail></airport-detail>
-</div>
-<footer class="footer">
-  <p>&copy; Oliver Gondring 2017</p>
-</footer>

@@ -1,16 +1,11 @@
-<div class="airport-detail">
-  <div class="row">
-    <div class="col-md-6">
-      <p>
-        airport-detail works!
-      </p>
-    </div>
-    <div class="col-md-6 airport-detail-map">
-      <airport-detail-map></airport-detail-map>
-    </div>
+<div *ngIf="airport">
+  <div class="airport-detail">
+  	<div class="h3">{{airport.name}}</div>
+  	<div>
+  		<label>ID:</label> <span class="airport-detail-value">{{airport.id}}</span><br />
+  		<label>ICAO:</label> <span class="airport-detail-value">{{airport.icao}}</span><br />
+  		<label>Location:</label> <span class="airport-detail-value">{{airport.city}}, {{airport.country}}</span>
+  		<!-- TODO add other properties-->
+  	</div>
   </div>
-  <!--
-  <div class="airport-map-detail">
-    <airport-detail-map></airport-detail-map>
-  </div>-->
 </div>

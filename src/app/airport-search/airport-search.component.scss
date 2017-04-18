@@ -1,0 +1,35 @@
+.search-suggestions {
+	position: absolute;
+	z-index: 5;
+	border: 1px solid blue;
+	border-radius: 2px;
+
+	// ul {
+  // 	list-style-type: none;
+	// 	padding: 0;
+	// 	margin: 0;
+	// 	li {
+	//
+	// 	}
+	// }
+}
+
+.search-result {
+  // font-size: smaller;
+	// border-bottom: 1px solid gray;
+	// border-left: 1px solid gray;
+	// border-right: 1px solid gray;
+	// width:195px;
+	padding: 5px;
+	background-color: white;
+	cursor: pointer;
+}
+.search-result:hover {
+	color: #eee;
+	background-color: #607D8B;
+}
+#search-box{
+	padding: 5px;
+	// width: 200px;
+	// height: 20px;
+}

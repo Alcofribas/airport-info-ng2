@@ -1,4 +1,19 @@
-<autocomplete
-  [items]="myItems"
-  (selected)="onItemSelected($event)">
-</autocomplete>
+<div id="search-component">
+  <div class="search-box">
+    <!-- TODO: display magnifying glass in search box -->
+  	<!-- TODO: display "searching results..." while fetching remote suggestions -->
+  	<input #searchBox id="search-box" [(ngModel)]="searchStr" (keyup)="search(searchStr)" />
+  </div>
+  <div *ngIf="searchActive && displaySearching" class="completer-searching">{{textSearching}}</div>
+  <div *ngIf="!searchActive && (!items || items.length === 0)" class="completer-no-results">{{textNoResults}}</div>
+  <div *ngIf="isInitialized">
+    <div class="search-suggestions">
+      <ul class="list-unstyled">
+        <li *ngFor="let airport of airports | async"
+    			(click)="onSelect(airport)" class="search-result" >
+          {{airport.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

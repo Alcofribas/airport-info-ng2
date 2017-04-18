@@ -3,15 +3,6 @@ body {
   padding-top: 5rem;
 }
 
-.airport-detail {
-  text-align: center;
-}
-
-.heading {
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
 .jumbotron {
   background-color: #baf2a9;
   text-align: center;
@@ -19,6 +10,7 @@ body {
 }
 
 .footer {
+  margin-top: 2em;
   padding-top: 1.5rem;
   text-align: center;
   color: #777;
@@ -35,7 +27,6 @@ body {
 @media screen and (min-width: 48em) {
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-right: 0;
     padding-left: 0;

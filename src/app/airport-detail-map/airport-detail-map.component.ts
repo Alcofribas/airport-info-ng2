@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Airport } from '../airport';
 
 @Component({
   selector: 'airport-detail-map',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AirportDetailMapComponent implements OnInit {
 
-  constructor() { }
+  @Input() airport: Airport;
 
-  ngOnInit() {
+  ngOnInit(){
+    // TODO: Initialize map!
   }
 
 }

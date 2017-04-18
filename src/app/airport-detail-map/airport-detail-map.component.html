@@ -1,3 +1,9 @@
-<p>
-  airport-detail-map works!
-</p>
+<div *ngIf="airport">
+  <div class="airport-detail-map">
+  	<div class="h3">Map of {{airport.name}}</div>
+  	<div>
+  		<label>Lat:</label> <span class="airport-detail-value">{{airport.latitude}}</span><br />
+  		<label>Lon:</label> <span class="airport-detail-value">{{airport.longitude}}</span><br />
+  	</div>
+  </div>
+</div>

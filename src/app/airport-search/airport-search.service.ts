@@ -15,6 +15,7 @@ export class AirportSearchService {
 		// TODO: adapt for use with real API
 		return this.http
 			.get(`app/airports/?name=${term}`)
+			//.get(`https://sandbox.paxlife.aero/api/search/${term}`)
 			.map(response => response.json().data as Airport[]);
 	}
 }
