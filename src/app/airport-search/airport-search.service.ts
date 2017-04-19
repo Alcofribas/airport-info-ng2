@@ -22,23 +22,22 @@ export class AirportSearchService {
 		console.log('Using In-memory Web API');
 		return this
 			.http.get(`${this.ApiBaseUrl}${term}`)
-			//jsonp.request(`https://sandbox.paxlife.aero/api/search/${term}`)
 			.map(response => response.json().data as Airport[]);
 	}
 
-	searchAPI(term: string): Promise<Airport[]> {
+	searchAPI(term: string): Observable<Airport[]> {
 		console.log('Using Test API');
 		let params = new URLSearchParams();
 		params.set('callback', 'JSONP_CALLBACK');
 		params.set('dataType', 'jsonp');
 		return this.jsonp.get(`${this.paxlifeApiQueryGetUrl}${term}`, {search:params})
-			.toPromise()
-			.then(response => response.json().data as Airport[])
+			.map(response => response.json().data as Airport[])
 			.catch(this.handleError);
 	}
 
 	private handleError(error: any): Promise<any> {
-		console.error('An error occurred: ', error); // for demo purposes only
+		// for demo purposes only, TODO: add proper error handling
+		console.error('An error occurred: ', error);
 		return Promise.reject(error.message || error);
 	}
 }
