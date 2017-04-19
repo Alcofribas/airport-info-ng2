@@ -83,7 +83,8 @@ Run the following commands to get started:
 git clone https://github.com/alcofribas/airport-search-ng2
 cd airport-search-ng2
 npm install
-ng serve```
+ng serve
+```
 
 Point your browser to http://localhost:4200 to start searching for airport information.
 
