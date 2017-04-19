@@ -89,10 +89,7 @@ The tradeoffs mentioned above lead to a considerable number of ToDos some of whi
 
 ## Dev Prerequisites
 
-Make sure that you have Node.js and npm installed.
-
-<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
-Get it now</a> if it's not already installed on your machine.
+Make sure that you have Node.js and npm installed. If not, do the [node/npm setup](https://docs.npmjs.com/getting-started/installing-node) first.
 
 **Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
 by running `node -v` and `npm -v` in a terminal/console window.
