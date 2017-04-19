@@ -1,35 +1,43 @@
 # Angular Airport Search
 
-This repository holds the TypeScript source code of the **Paxlife Coding Challenge**.
-
-It's been extended with testing support so you can start writing tests immediately.
+This repository holds the source code for the **Paxlife Coding Challenge**.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
-It is using [Angular Material Design](https://material.angular.io/) Components.
+It is using [Bootstrap](https://v4-alpha.getbootstrap.com/) for convenient prototype UI design.
 
-We are unlikely to accept suggestions about how to grow this QuickStart into something it is not.
-Please keep that in mind before posting issues and PRs.
+## Challenge Description
 
-## Updating to a newer version of the Quickstart Repo
+The Challenge was to design and implement a web application that allowed users to search information about an airport. The app was designed with respect to the following directions.
 
-From time to time the QuickStart will add be enhanced with support for new features or to reflect
-changes to the [official Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html).
+### Technical Requirements
 
-You can update your existing project to an up-to-date QuickStart by following these instructions:
-- Create a new project using the [instructions below](#create-a-new-project-based-on-the-quickstart)
-- Copy the code you have in your project's `main.ts` file onto `src/app/main.ts` in the new project
-- Copy your old `app` folder into `src/app`
-- Delete `src/app/main.ts` if you have one (we now use `src/main.ts` instead)
-- Copy your old `index.html`, `styles.css` and `tsconfig.json` into `src/`
-- Install all your third party dependencies
-- Copy your old `e2e/` folder into `e2e/`
-- Copy over any other files you added to your project
-- Copy your old `.git` folder into your new project's root
+- Use the Paxlife dedicated API (http://sandbox.paxlife.aero/api/)
+- Choose a suitable open-source JS framework and libraries. Please motivate your choice!
 
-Now you can continue working on the new project.
+### Functional Requirements
 
-## Prerequisites
+These user stories needed to be satisfied:
+- As a user, I want to request airport information from a city name or from IATA code.
+- As a user, I want to see a detailed view of the requested airport with its name, its IATA and ICAO codes, its country code, and a geolocation on a map component.
+
+### Setting
+
+Expected time budget for the task were 6-8 hours. Trade-offs were allowed, all decisions should be documented. The level of feature completeness, documentation, tests was subject to the participant's own decision making. "Product Management is in vacation and not available".
+
+### Mockup
+
+The expected result should approximately look like this:
+
+![Airport Info Mockup](/mockup.jpg)
+
+## Live Demo
+
+See the [app in action](https://alcofribas.github.io/airport-info-ng2/).
+
+## Comments on this solution
+
+## Dev Prerequisites
 
 Make sure that you have Node.js and npm installed.
 
@@ -40,20 +48,15 @@ Get it now</a> if it's not already installed on your machine.
 by running `node -v` and `npm -v` in a terminal/console window.
 Older versions produce errors.
 
-## Create a new project based on the QuickStart
+Run the following commands to get started:
 
-Clone this repo into new project folder (e.g., `my-proj`).
 ```shell
-git clone https://github.com/angular/quickstart  my-proj
-cd my-proj
-```
+git clone https://github.com/alcofribas/airport-search-ng2
+cd airport-search-ng2
+npm install
+ng serve```
 
-We have no intention of updating the source on `angular/quickstart`.
-Discard the `.git` folder..
-```shell
-rm -rf .git  # OS/X (bash)
-rd .git /S/Q # windows
-```
+Point your browser to http://localhost:4200 to start searching for airport information.
 
 ## Browser Support
 
@@ -66,23 +69,22 @@ The AirportSearch application is supposed to work with the following browsers:
 
 ## Caveats
 
-This is a prototype not ready for use in production. Before deploying it, please !#TODO
-
-```shell
-xargs rm -rf < non-essential-files.osx.txt
-rm src/app/*.spec*.ts
-rm non-essential-files.osx.txt
-```
+This is a prototype not ready for use in production. Please keep that in mind when using it.
 
 ## TODO
 
+The tradeoffs that were made during the completion of the coding challenge lead to a considerable number of ToDos some of which are listed below:
+
 - Display message in dropdown while retrieving results asyncronously
 - Display message in dropdown when there is no result
-
 - Remove unneeded service "airport.service.ts"
-
 - Remove in-memory web api including obsolete dependencies
+- Remove unneeded Console Logging
 - Remove git commit history
+- Enable keyboard controls for autocomplete dropdown (Esc, Enter, Up/Down)
+- Add media queries for best responsive user experience
+- Optimize app size and performance
+- [Deploy thoroughly tested and optimized app](https://alligator.io/angular/deploying-angular-app-github-pages/)
 
 ### Unit Tests
 TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec.ts`.

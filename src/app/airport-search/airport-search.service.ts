@@ -16,9 +16,9 @@ export class AirportSearchService {
 
 	search(term: string): Observable<Airport[]> {
 		// TODO: adapt for use with real API
-		return this.http
-			.get(`app/airports/?name=${term}`)
-			//.get(`https://sandbox.paxlife.aero/api/search/${term}`)
+		return this
+			.http.get(`app/airports/?name=${term}`)
+			//jsonp.request(`https://sandbox.paxlife.aero/api/search/${term}`)
 			.map(response => response.json().data as Airport[]);
 	}
 }

@@ -32,6 +32,7 @@ export class AirportSearchComponent implements OnInit {
 	@Input() public textNoResults = TEXT_NORESULTS;
 
 	public searchStr = '';
+	public showSuggestions: boolean;
 	private displaySearching = true;
   private _onTouchedCallback: () => void = noop;
 	private _onChangeCallback: (_: any) => void = noop;
@@ -51,6 +52,7 @@ export class AirportSearchComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.showSuggestions = false;
 		this.airports = this.searchTerms
 			.debounceTime(300)		// wait 300ms after each keystroke before considering the term
 			.distinctUntilChanged() // ignore if next search term is same as previous
@@ -64,13 +66,30 @@ export class AirportSearchComponent implements OnInit {
 			});
 	}
 
+	onFocus(): void {
+		console.log('focus event fired');
+		this.showSuggestions = this.searchStr.length > 0 ? true : false;
+	}
+
+	onBlur(): void {
+		console.log('blur event fired');
+		// this.showSuggestions = false;
+	}
+
+  onKeyUp($event): void {
+		this.showSuggestions = this.searchStr.length > 0 ? true : false;
+		this.search(this.searchStr);
+	}
+
 	onSelect(airport: Airport): void {
 		console.log('Selected Airport:', airport.name)
 		this.selectedAirport = airport;
 		// TODO: update value of searchbox with name of selected airport
+		this.searchStr = airport.name;
 		// TODO: close suggestion box
-		// this.initializeMap(airport);
+		this.showSuggestions = false;
 
 	// TODO: add logic for key events (esc, up, down, enter) to choose from suggestions
+	// TODO: limit number of suggestions in dropdown
 	}
 }

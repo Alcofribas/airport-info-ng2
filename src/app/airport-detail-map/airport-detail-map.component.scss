@@ -1,9 +1,16 @@
 .airport-detail-map {
-	text-align: left;
-	padding: 0.8em 0em;
+	background-color: rgba(142, 202, 199, 0.41);;
+	text-align: start;
+  padding: 0.8em;
+	margin: 2em 0em 0em;
+	border-radius: 0.3em;
 }
 
 #airport-map {
-    width: 1000px;
-    height: 700px;
+    width: 100%;
+    height: 100%;
+}
+
+.fill {
+   min-height: 90%;
  }
