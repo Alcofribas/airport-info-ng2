@@ -87,10 +87,6 @@ ng serve```
 
 Point your browser to http://localhost:4200 to start searching for airport information.
 
-## Caveats
-
-This is a prototype not ready for use in production. Please keep that in mind when using it.
-
 ### Unit Tests
 TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec.ts`.
 
