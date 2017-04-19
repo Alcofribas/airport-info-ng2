@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http }    from '@angular/http';
+import { Headers, Http, Jsonp }    from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,8 +11,8 @@ export class AirportService {
 	// TODO: is this component really necessary?
 	private airportsApiBaseUrl = 'api/airports' // TODO: put real base URL to web API here
 
-	private airportsApiQueryGet = this.airportsApiBaseUrl; // TODO: replace URL to web API
-	private airportsApiIdGet = this.airportsApiBaseUrl; // TODO: replace URL to web API
+	private airportsApiQueryGet = this.airportsApiBaseUrl;
+	private airportsApiIdGet = this.airportsApiBaseUrl;
 
 	constructor(private http: Http) { }
 

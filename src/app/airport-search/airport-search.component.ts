@@ -57,7 +57,7 @@ export class AirportSearchComponent implements OnInit {
 			.debounceTime(300)		// wait 300ms after each keystroke before considering the term
 			.distinctUntilChanged() // ignore if next search term is same as previous
 			.switchMap(term => term
-				? this.airportSearchService.search(term)
+				? this.airportSearchService.searchAPI(term)
 				: Observable.of<Airport[]>([]))
 			.catch(error => {
 				// TODO: add real error handling
