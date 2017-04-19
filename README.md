@@ -1,6 +1,6 @@
 # Angular Airport Search
 
-This repository holds the source code for the **Paxlife Coding Challenge**.
+This repository holds the source code for my **Paxlife Coding Challenge**.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
@@ -37,6 +37,35 @@ See the [app in action](https://alcofribas.github.io/airport-info-ng2/).
 
 ## Comments on this solution
 
+### Why Angular?
+
+### What works
+
+- User stories fulfilled
+- Communication with required REST API works
+- Overall responsive design and layout
+
+### Where the tradeoffs are
+
+### ToDo
+
+The tradeoffs that were made during the completion of the coding challenge lead to a considerable number of ToDos some of which are pointed out below:
+
+- Display message in dropdown while retrieving results asyncronously
+- Display message in dropdown when there is no result
+- Remove unneeded service "airport.service.ts"
+- Remove in-memory web api including obsolete dependencies
+- Remove unneeded Console Logging
+- Remove git commit history
+- Enable keyboard controls for autocomplete dropdown (Esc, Enter, Up/Down)
+- Support mobile phone touch keyboard form input
+- Have UX guy beautify and add some eyecandy to UI
+- Add media queries for best responsive user experience
+- Optimize app size and performance
+- Implement elaborate error handling
+- Don't push API key to GitHub ;)
+- [Deploy thoroughly tested and optimized app](https://alligator.io/angular/deploying-angular-app-github-pages/)
+
 ## Dev Prerequisites
 
 Make sure that you have Node.js and npm installed.
@@ -58,33 +87,9 @@ ng serve```
 
 Point your browser to http://localhost:4200 to start searching for airport information.
 
-## Browser Support
-
-The AirportSearch application is supposed to work with the following browsers:
-- Firefox
-- Chrome
-- Opera
-- Internet Explorer
-- Safari
-
 ## Caveats
 
 This is a prototype not ready for use in production. Please keep that in mind when using it.
-
-## TODO
-
-The tradeoffs that were made during the completion of the coding challenge lead to a considerable number of ToDos some of which are listed below:
-
-- Display message in dropdown while retrieving results asyncronously
-- Display message in dropdown when there is no result
-- Remove unneeded service "airport.service.ts"
-- Remove in-memory web api including obsolete dependencies
-- Remove unneeded Console Logging
-- Remove git commit history
-- Enable keyboard controls for autocomplete dropdown (Esc, Enter, Up/Down)
-- Add media queries for best responsive user experience
-- Optimize app size and performance
-- [Deploy thoroughly tested and optimized app](https://alligator.io/angular/deploying-angular-app-github-pages/)
 
 ### Unit Tests
 TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec.ts`.

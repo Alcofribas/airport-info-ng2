@@ -18,7 +18,7 @@
   <div *ngIf="showSuggestions" class="search-suggestions">
     <ul class="list-unstyled">
       <li *ngFor="let airport of airports | async"
-  			(click)="onSelect(airport)" class="search-result" >
+  			(mousedown)="onSelect(airport)" class="search-result" >
         {{airport.name}}
       </li>
     </ul>

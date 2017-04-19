@@ -67,13 +67,11 @@ export class AirportSearchComponent implements OnInit {
 	}
 
 	onFocus(): void {
-		console.log('focus event fired');
 		this.showSuggestions = this.searchStr.length > 0 ? true : false;
 	}
 
-	onBlur(): void {
-		console.log('blur event fired');
-		// this.showSuggestions = false;
+	onBlur(event): void {
+		this.showSuggestions = false;
 	}
 
   onKeyUp($event): void {
@@ -82,14 +80,10 @@ export class AirportSearchComponent implements OnInit {
 	}
 
 	onSelect(airport: Airport): void {
-		console.log('Selected Airport:', airport.name)
 		this.selectedAirport = airport;
-		// TODO: update value of searchbox with name of selected airport
 		this.searchStr = airport.name;
-		// TODO: close suggestion box
 		this.showSuggestions = false;
 
-	// TODO: add logic for key events (esc, up, down, enter) to choose from suggestions
 	// TODO: limit number of suggestions in dropdown
 	}
 }
