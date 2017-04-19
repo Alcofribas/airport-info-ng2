@@ -35,11 +35,11 @@ The expected result should approximately look like this:
 
 See the [app in action](https://alcofribas.github.io/airport-info-ng2/).
 
-## Comments on this solution
+## Comments on this submission to the Challenge
 
 ### Why Angular?
 
-There are some reasons that brought me to choosing Angular for the task. Most relevant for my decision were aspects offered by Angular which are ultimately related to the sustainability of the product and the development process:
+There are a couple of reasons that brought me to choosing Angular for the task. Most relevant for my decision were aspects offered by Angular which are ultimately related to the sustainability of the product and the development process:
 
 - Componentization/Modularization, Data-Binding, Performance
 - Excellent Tooling and Easy Testability
@@ -55,11 +55,17 @@ A more difficult question would be why I prefered Angular over other common opti
 
 ### Where the tradeoffs are
 
-The implementation focused on feature completeness, a mobile first design and a sustainable basic setup for testing and continuous integration. Important tasks like exhaustive error handling and thorough testing were postponed to the next phase of the development process, as well as UI/UX refinement. 
+The implementation focused on feature completeness, a mobile first design and a sustainable basic setup for testing and continuous integration. Important tasks like exhaustive error handling, code commenting, thorough testing and UI/UX refinement were given lower priority (don't you run `ng test` in the current state, will you?).
 
 ### ToDo
 
 The tradeoffs mentioned above lead to a considerable number of ToDos some of which are pointed out below:
+
+#### VUA (Very Urgent Additions)
+
+- Add comments to the code
+- Implement elaborate error handling
+- Implement proper testing
 
 #### Enhancements
 
@@ -71,15 +77,13 @@ The tradeoffs mentioned above lead to a considerable number of ToDos some of whi
 
 #### Optimizations
 
-- Implement elaborate error handling
-- Implement proper testing
 - Add media queries for best responsive user experience
 - Optimize app size and performance
 - Have UX guy beautify and streamline UI
 
 #### Cleaning-Up
 
-- Remove in-memory web api including obsolete dependencies
+- Remove in-memory web api
 - Remove unneeded Console Logging
 - Don't push API key to GitHub ;)
 
@@ -104,41 +108,3 @@ ng serve
 ```
 
 Point your browser to http://localhost:4200 to start searching for airport information.
-
-### Unit Tests
-TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec.ts`.
-
-Look for the example `src/app/app.component.spec.ts`.
-Add more `.spec.ts` files as you wish; we configured karma to find them.
-
-Run it with `npm test`
-
-That command first compiles the application, then simultaneously re-compiles and runs the karma test-runner.
-Both the compiler and the karma watch for (different) file changes.
-
-Shut it down manually with `Ctrl-C`.
-
-Test-runner output appears in the terminal window.
-We can update our app and our tests in real-time, keeping a weather eye on the console for broken tests.
-Karma is occasionally confused and it is often necessary to shut down its browser or even shut the command down (`Ctrl-C`) and
-restart it. No worries; it's pretty quick.
-
-### End-to-end (E2E) Tests
-
-E2E tests are in the `e2e` directory, side by side with the `src` folder.
-Their filenames must end in `.e2e-spec.ts`.
-
-Look for the example `e2e/app.e2e-spec.ts`.
-Add more `.e2e-spec.js` files as you wish (although one usually suffices for small projects);
-we configured Protractor to find them.
-
-Thereafter, run them with `npm run e2e`.
-
-That command first compiles, then simultaneously starts the `lite-server` at `localhost:8080`
-and launches Protractor.  
-
-The pass/fail test results appear at the bottom of the terminal window.
-A custom reporter (see `protractor.config.js`) generates a  `./_test-output/protractor-results.txt` file
-which is easier to read; this file is excluded from source control.
-
-Shut it down manually with `Ctrl-C`.

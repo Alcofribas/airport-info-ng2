@@ -22,19 +22,18 @@ export class AirportSearchService {
 	// Note the shape of the data that the server returns.
 	// This particular in-memory web API example returns an object with a data property.
 	// Your API might return something else. Adjust the code to match your web API.
-	search(term: string): Observable<Airport[]> {
-		console.log('Using In-memory Web API');
-		return this
-			.http.get(`${this.ApiBaseUrl}${term}`)
-			.map(response => response.json().data as Airport[])
-			.catch(this.handleError);
-	}
+	// search(term: string): Observable<Airport[]> {
+	// 	console.log('Using In-memory Web API');
+	// 	return this
+	// 		.http.get(`${this.ApiBaseUrl}${term}`)
+	// 		.map(response => response.json().data as Airport[])
+	// 		.catch(this.handleError);
+	// }
 
 	searchAPI(term: string): Observable<Airport[]> {
-		console.log('Using Test API');
 		let reqUrl = `${this.paxlifeApiQueryGetUrl}${term}`;
 		return this.http.get(reqUrl)
-			.map(response => response.json().data as Airport[])
+			.map(response => response.json() as Airport[])
 			.catch(this.handleError);
 	}
 
