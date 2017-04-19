@@ -1,4 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
+import { By }             from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
@@ -17,16 +18,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'app works!'`, async(() => {
+  it('should display the original title', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
+    expect(app.title).toEqual('Airport Info App');
   }));
 
-  it('should render title in a h1 tag', async(() => {
+  it('should render the correct title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
+    const comp = fixture.debugElement.componentInstance;
+    const el = fixture.debugElement.query(By.css('h1')).nativeElement;
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(el.textContent).toContain(comp.title);
   }));
 });

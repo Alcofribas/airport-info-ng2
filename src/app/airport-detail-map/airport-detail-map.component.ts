@@ -3,6 +3,8 @@ import { NguiMapComponent } from '@ngui/map';
 
 import { Airport } from '../airport';
 
+const ZOOM_LEVEL = "13";
+
 @Component({
   selector: 'airport-detail-map',
   templateUrl: './airport-detail-map.component.html',
@@ -10,7 +12,8 @@ import { Airport } from '../airport';
 })
 export class AirportDetailMapComponent implements OnInit, OnChanges {
 
-  private _pos: any;
+  public _pos: any;
+  public _zoomlevel: any;
 
   @Input() airport: Airport;
 
@@ -18,10 +21,12 @@ export class AirportDetailMapComponent implements OnInit, OnChanges {
 
   ngOnInit(){
     this._pos = this.airport ? this.getPosition(this.airport) : {lat: 0, lng: 0};
+    this.resetZoom();
   }
 
   ngOnChanges(){
     this._pos = this.airport ? this.getPosition(this.airport) : this._pos;
+    this.resetZoom();
   }
 
   private getPosition(airport: Airport) {
@@ -29,6 +34,10 @@ export class AirportDetailMapComponent implements OnInit, OnChanges {
       lat: airport.latitude,
       lng: airport.longitude
     }
+  }
+
+  private resetZoom() {
+    this._zoomlevel = ZOOM_LEVEL;
   }
 
 }

@@ -39,6 +39,14 @@ See the [app in action](https://alcofribas.github.io/airport-info-ng2/).
 
 ### Why Angular?
 
+There are some reasons that brought me to choosing Angular for the task. Most relevant for my decision were aspects offered by Angular which are ultimately related to the sustainability of the product and the development process:
+
+- Componentization/Modularization, Data-Binding, Performance
+- Excellent Tooling and Easy Testability
+- Suitable for Agile Development and Continuous Integration Strategies
+
+A more difficult question would be why I prefered Angular over other common options with similar advantages. My personal reason here was that I had little knowledge about Angular so far and found it a wonderful opportunity to have a first intense, in-depth encounter with a framework that seemed quite appealing to me on first sight.
+
 ### What works
 
 - User stories fulfilled
@@ -47,24 +55,33 @@ See the [app in action](https://alcofribas.github.io/airport-info-ng2/).
 
 ### Where the tradeoffs are
 
+The implementation focused on feature completeness, a mobile first design and a sustainable basic setup for testing and continuous integration. Important tasks like exhaustive error handling and thorough testing were postponed to the next phase of the development process, as well as UI/UX refinement. 
+
 ### ToDo
 
-The tradeoffs that were made during the completion of the coding challenge lead to a considerable number of ToDos some of which are pointed out below:
+The tradeoffs mentioned above lead to a considerable number of ToDos some of which are pointed out below:
+
+#### Enhancements
 
 - Display message in dropdown while retrieving results asyncronously
 - Display message in dropdown when there is no result
-- Remove unneeded service "airport.service.ts"
-- Remove in-memory web api including obsolete dependencies
-- Remove unneeded Console Logging
-- Remove git commit history
-- Enable keyboard controls for autocomplete dropdown (Esc, Enter, Up/Down)
+- Reset zoom level of map when choosing another airport
+- Enable keyboard controls for autocomplete dropdown (Esc, Enter, Arrow Up/Down)
 - Support mobile phone touch keyboard form input
-- Have UX guy beautify and add some eyecandy to UI
+
+#### Optimizations
+
+- Implement elaborate error handling
+- Implement proper testing
 - Add media queries for best responsive user experience
 - Optimize app size and performance
-- Implement elaborate error handling
+- Have UX guy beautify and streamline UI
+
+#### Cleaning-Up
+
+- Remove in-memory web api including obsolete dependencies
+- Remove unneeded Console Logging
 - Don't push API key to GitHub ;)
-- [Deploy thoroughly tested and optimized app](https://alligator.io/angular/deploying-angular-app-github-pages/)
 
 ## Dev Prerequisites
 

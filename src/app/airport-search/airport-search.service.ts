@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Jsonp } from '@angular/http';
+import { Http } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 import { Airport } from '../airport';
 
@@ -14,23 +16,24 @@ export class AirportSearchService {
 	private ApiBaseUrl = this.inMemoryWebApiBaseUrl;
 
 	constructor(
-		private http: Http,
-		private jsonp: Jsonp
+		private http: Http
 	) {}
 
+	// Note the shape of the data that the server returns.
+	// This particular in-memory web API example returns an object with a data property.
+	// Your API might return something else. Adjust the code to match your web API.
 	search(term: string): Observable<Airport[]> {
 		console.log('Using In-memory Web API');
 		return this
 			.http.get(`${this.ApiBaseUrl}${term}`)
-			.map(response => response.json().data as Airport[]);
+			.map(response => response.json().data as Airport[])
+			.catch(this.handleError);
 	}
 
 	searchAPI(term: string): Observable<Airport[]> {
 		console.log('Using Test API');
-		let params = new URLSearchParams();
-		params.set('callback', 'JSONP_CALLBACK');
-		params.set('dataType', 'jsonp');
-		return this.jsonp.get(`${this.paxlifeApiQueryGetUrl}${term}`, {search:params})
+		let reqUrl = `${this.paxlifeApiQueryGetUrl}${term}`;
+		return this.http.get(reqUrl)
 			.map(response => response.json().data as Airport[])
 			.catch(this.handleError);
 	}
