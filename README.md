@@ -91,15 +91,14 @@ The tradeoffs mentioned above lead to a considerable number of ToDos some of whi
 
 Make sure that you have Node.js and npm installed. If not, do the [node/npm setup](https://docs.npmjs.com/getting-started/installing-node) first.
 
-**Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
-by running `node -v` and `npm -v` in a terminal/console window.
-Older versions produce errors.
+Verify that you are running at least node `v4.x.x` and npm `3.x.x` by running `node -v` and `npm -v` in a terminal/console window. Older versions produce errors.
 
 Run the following commands to get started:
 
 ```shell
 git clone https://github.com/alcofribas/airport-search-ng2
 cd airport-search-ng2
+git checkout alpha
 npm install
 ng serve
 ```

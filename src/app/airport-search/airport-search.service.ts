@@ -11,9 +11,9 @@ import { Airport } from '../airport';
 @Injectable()
 export class AirportSearchService {
 
-	private inMemoryWebApiBaseUrl = 'api/airports/?name=' // TODO: put real base URL to web API here
-	private paxlifeApiQueryGetUrl = 'https://sandbox.paxlife.aero/api/search/';
-	private ApiBaseUrl = this.inMemoryWebApiBaseUrl;
+  private inMemoryWebApiBaseUrl = 'api/airports/?name=' // TODO: put real base URL to web API here
+  private paxlifeApiQueryGetUrl = 'https://sandbox.paxlife.aero/api/search/';
+  private ApiBaseUrl = this.inMemoryWebApiBaseUrl;
 
 	constructor(
 		private http: Http
